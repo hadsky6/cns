@@ -1,0 +1,34 @@
+<html>
+
+<head>
+    <script>
+        function compute() {
+            var p = document.getElementById('P').value;
+            var G = document.getElementById('G').value;
+            var a = document.getElementById('a').value;
+            var b = document.getElementById('b').value;
+            var x = (Math.pow(G, a)) % p;
+            var y = (Math.pow(G, b)) % p;
+            var ka = (Math.pow(y, a)) % p;
+            var kb = (Math.pow(x, b)) % p;
+            document.getElementById('ka').value = ka;
+            document.getElementById('kb').value = kb;
+        }
+    </script>
+</head>
+
+<body>
+
+    <label>Public Number 1 (P) :<input id="P"></label><br>
+    <label>Public Number 2 (G) :<input id="G"></label><br>
+    <label>Alice Private Key :<input id="a"></label><br>
+    <label>Bob Private Key :<input id="b"></label><br>
+
+    <input type="button" value="Compute" onclick="compute()"><br>
+
+    Alice Secret key: <input id="ka">
+    Bob Secret key: <input id="kb">
+
+</body>
+
+</html>
